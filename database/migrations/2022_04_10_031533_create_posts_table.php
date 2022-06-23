@@ -23,7 +23,6 @@ return new class extends Migration
             $table->integer('rating_total')->nullable()->default(0);
             $table->timestamps();
         });
-        DB::unprepared(file_get_contents('app/post1.sql'));
     }
 
     /**
