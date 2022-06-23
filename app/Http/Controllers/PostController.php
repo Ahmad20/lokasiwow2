@@ -17,9 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::paginate(5);
-        // return view('index', ['posts' => $post]);
-        return response([ 'posts' =>$post, 'message' => 'Success'], 200);
+        $post = Post::paginate(20);
+        return view('index', ['posts' => $post]);
+        // return response([ 'posts' =>$post, 'message' => 'Success'], 200);
     }
 
     public function singlepage(Request $request, $post_id){
