@@ -30,10 +30,8 @@ class PostController extends Controller
 
     public function singlelocation(Request $request, $location){
         // /posts/{location}
-        return ($location);
-        // $post = Post::where('location', '=', $location)->get();
-        // return dd($post);
-        // return response(['post' =>$post]);
+        $post = Post::where('location', '=', $location)->get();
+        return response(['post' =>$post]);
     }
 
     public function save_comment(Request $request){
