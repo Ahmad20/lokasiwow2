@@ -13,12 +13,13 @@ class Post extends Model
     protected $table = 'posts';
     protected $primaryKey='post_id';
     protected $fillable = [
-        'title',
-        'location',
+        'name',
+        'rating_total',
         'image_link',
-        // 'count_like'
         'rating_score',
-        'rating_count',
+        'image_url',
+        'location',
+        'location_url'
     ];
     function comments(){
         return $this->hasMany(Comment::class)->orderBy('id','desc');
