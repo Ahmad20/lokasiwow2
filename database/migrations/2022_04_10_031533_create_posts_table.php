@@ -23,6 +23,7 @@ return new class extends Migration
             // $table->integer('count_like');
             $table->timestamps();
         });
+        DB::unprepared(file_get_contents('app/post1.sql'));
     }
 
     /**
