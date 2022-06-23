@@ -29,7 +29,7 @@ use App\Http\Controllers\AdminPostController;
 Route::get('/', [PostController::class, 'index']);
 Route::post('save-comment',[PostController::class, 'save_comment']);
 Route::get('/posts/{post_id}', [PostController::class, 'singlepage']);
-Route::get('/posts/{location}', [PostController::class, 'singlelocation']);
+Route::get('/posting/{location}', [PostController::class, 'singlelocation']);
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'auth']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');

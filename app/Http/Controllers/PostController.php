@@ -30,8 +30,10 @@ class PostController extends Controller
 
     public function singlelocation(Request $request, $location){
         // /posts/{location}
-        $post = Post::where('location', '=', $location)->all->random(8);
-        return response([ 'post' =>$post]);
+        return ($location);
+        // $post = Post::where('location', '=', $location)->get();
+        // return dd($post);
+        // return response(['post' =>$post]);
     }
 
     public function save_comment(Request $request){
