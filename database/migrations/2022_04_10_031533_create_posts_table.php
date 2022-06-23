@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('location_url')->nullable();
             $table->float('rating_score');
             $table->integer('rating_total')->nullable()->default(0);
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
