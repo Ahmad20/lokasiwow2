@@ -17,28 +17,21 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::paginate(20);
-        return view('index', ['posts' => $post]);
-        // return response([ 'posts' =>$post, 'message' => 'Success'], 200);
+        // "/"
+        $post = Post::all()->random(8);
+        return response([ 'post' =>$post]);
     }
 
     public function singlepage(Request $request, $post_id){
+        // /posts/{post_id}
         $post = Post::findOrFail($post_id);
-        $comments = DB::table('comments')
-                            ->where('post_id', '=', $post_id)
-                            ->orderByDesc('created_at')
-                            ->get();
-        return view('singlepage')->with('post', $post)->with('comments', $comments);
+        return response(['post' =>$post]);
     }
 
     public function singlelocation(Request $request, $location){
-        // $post = Post::findOrFail($location);
-        // $post = DB::table('posts')
-        //                     ->where('location', '=', $location)
-        //                     ->get();
-        $post = Post::where('location', '=', $location)->paginate(20);
-        // return dd($post);
-        return view('index', ['posts' => $post]);
+        // /posts/{location}
+        $post = Post::where('location', '=', $location)->all->random(8);
+        return response([ 'post' =>$post]);
     }
 
     public function save_comment(Request $request){

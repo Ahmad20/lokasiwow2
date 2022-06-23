@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
             BlogSeeder::class,
         ]);
         // Membaca sql untuk data post wisata
-        DB::unprepared(file_get_contents('app/post1.sql'));
+        DB::unprepared(file_get_contents('app/posts.sql'));
     }
 }
