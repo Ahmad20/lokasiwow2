@@ -26,7 +26,7 @@ use App\Http\Controllers\AdminPostController;
 |
 */
 
-Route::get('/', [PostController::class, 'index']);
+// Route::get('/', [PostController::class, 'index']);
 Route::post('save-comment',[PostController::class, 'save_comment']);
 Route::get('/posts/{post_id}', [PostController::class, 'singlepage']);
 Route::get('/posting/{location}', [PostController::class, 'singlelocation']);
@@ -50,6 +50,10 @@ Route::group(['middleware' => ['admin']], function () {
     ]);
 
 });
-Route::get('/dashboard', [DashboardController::class,'index']);
+Route::get('/', [PostController::class, 'index']);
+Route::get('/blogs', [PostController::class, 'getBlog']);
+Route::get('/jakarta', [PostController::class, 'getWisataJakarta']);
+Route::get('/ntb', [PostController::class, 'getWisataNtb']);
+Route::get('/jatim', [PostController::class, 'getWisataJatim']);
 
 ?>

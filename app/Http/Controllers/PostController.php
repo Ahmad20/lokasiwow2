@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Post;
 use App\Models\Comment;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
-use Illuminate\Http\Request;
+
 class PostController extends Controller
 {
     /**
@@ -28,12 +30,24 @@ class PostController extends Controller
         return response($post);
     }
 
-    public function singlelocation(Request $request, $location){
-        // /posts/{location}
-        $post = Post::where('location', '=', $location)->get();
-        return response($post);
-    }
+    // public function singlelocation(Request $request, $location){
+    //     // /posts/{location}
+    //     $post = Post::where('location', '=', $location)->get();
+    //     return response($post);
+    // }
 
+    public function getBlog(){
+        return response(Blog::all()->random(8));
+    }
+    public function getWisataJatim(){
+        return response(Post::where('location', '=', 'aceh')->get());
+    }
+    public function getWisataNtb(){
+        return response(Post::where('location', '=', 'ntb')->get());
+    }
+    public function getWisataJakarta(){
+        return response(Post::where('location', '=', 'dki+jakarta')->get());
+    }
     public function save_comment(Request $request){
         $data=new Comment;
         $data->post_id=$request->post;
