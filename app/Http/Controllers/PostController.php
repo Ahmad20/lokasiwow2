@@ -19,19 +19,19 @@ class PostController extends Controller
     {
         // "/"
         $post = Post::all()->random(8);
-        return response([ 'post' =>$post]);
+        return response($post);
     }
 
     public function singlepage(Request $request, $post_id){
         // /posts/{post_id}
         $post = Post::findOrFail($post_id);
-        return response(['post' =>$post]);
+        return response($post);
     }
 
     public function singlelocation(Request $request, $location){
         // /posts/{location}
         $post = Post::where('location', '=', $location)->get();
-        return response(['post' =>$post]);
+        return response($post);
     }
 
     public function save_comment(Request $request){
