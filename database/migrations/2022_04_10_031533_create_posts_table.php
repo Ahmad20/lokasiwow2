@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('location');
             $table->text('image_url')->nullable();
+            $table->string('category');
             $table->text('location_url')->nullable();
             $table->float('rating_score');
             $table->integer('rating_total')->nullable()->default(0);

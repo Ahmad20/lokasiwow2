@@ -55,5 +55,9 @@ Route::get('/blogs', [PostController::class, 'getBlog']);
 Route::get('/jakarta', [PostController::class, 'getWisataJakarta']);
 Route::get('/ntb', [PostController::class, 'getWisataNtb']);
 Route::get('/jatim', [PostController::class, 'getWisataJatim']);
+Route::get('/pantai', [PostController::class, 'getCategoryPantai']);
+Route::get('/gunung', [PostController::class, 'getCategoryGunung']);
+Route::get('/seni', [PostController::class, 'getCategorySeni']);
+Route::get('/religi', [PostController::class, 'getCategoryReligi']);
 
 ?>

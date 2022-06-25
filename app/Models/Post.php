@@ -19,6 +19,7 @@ class Post extends Model
         'rating_score',
         'image_url',
         'location',
+        'category',
         'location_url'
     ];
     function comments(){

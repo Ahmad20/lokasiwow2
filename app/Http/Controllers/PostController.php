@@ -57,6 +57,22 @@ class PostController extends Controller
         return response(['data'=>$post, 'message'=>'success']);
         // return response(Post::where('location', '=', 'dki+jakarta')->get());
     }
+    public function getCategoryPantai(){
+        $post = Post::where('category', '=', 'pantai')->get();
+        return response(['data'=>$post, 'message'=>'success']);
+    }
+    public function getCategoryGunung(){
+        $post = Post::where('category', '=', 'gunung')->get();
+        return response(['data'=>$post, 'message'=>'success']);
+    }
+    public function getCategorySeni(){
+        $post = Post::where('category', '=', 'seni&budaya')->get();
+        return response(['data'=>$post, 'message'=>'success']);
+    }
+    public function getCategoryReligi(){
+        $post = Post::where('category', '=', 'religi')->get();
+        return response(['data'=>$post, 'message'=>'success']);
+    }
     public function save_comment(Request $request){
         $data=new Comment;
         $data->post_id=$request->post;
