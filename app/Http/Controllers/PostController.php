@@ -38,16 +38,24 @@ class PostController extends Controller
     // }
 
     public function getBlog(){
-        return response(Blog::all()->random(8));
+        $post = Blog::all()->random(8);
+        return response(['data'=>$post, 'message'=>'success']);
+        // return response(Blog::all()->random(8));
     }
     public function getWisataJatim(){
-        return response(Post::where('location', '=', 'aceh')->get());
+        $post = Post::where('location', '=', 'aceh')->get();
+        return response(['data'=>$post, 'message'=>'success']);
+        // return response(Post::where('location', '=', 'aceh')->get());
     }
     public function getWisataNtb(){
-        return response(Post::where('location', '=', 'ntb')->get());
+        $post = Post::where('location', '=', 'ntb')->get();
+        return response(['data'=>$post, 'message'=>'success']);
+        // return response(Post::where('location', '=', 'ntb')->get());
     }
     public function getWisataJakarta(){
-        return response(Post::where('location', '=', 'dki+jakarta')->get());
+        $post = Post::where('location', '=', 'dki+jakarta')->get();
+        return response(['data'=>$post, 'message'=>'success']);
+        // return response(Post::where('location', '=', 'dki+jakarta')->get());
     }
     public function save_comment(Request $request){
         $data=new Comment;
