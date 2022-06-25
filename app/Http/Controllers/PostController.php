@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Facades\Response;
 
 class PostController extends Controller
 {
@@ -21,7 +22,7 @@ class PostController extends Controller
     {
         // "/"
         $post = Post::all()->random(8);
-        return response($post);
+        return response(['data'=>$post, 'message'=>'success']);
     }
 
     public function singlepage(Request $request, $post_id){
