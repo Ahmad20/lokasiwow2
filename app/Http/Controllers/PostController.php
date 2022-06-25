@@ -43,7 +43,7 @@ class PostController extends Controller
         // return response(Blog::all()->random(8));
     }
     public function getWisataJatim(){
-        $post = Post::where('location', '=', 'aceh')->get();
+        $post = Post::where('location', '=', 'jatim')->get();
         return response(['data'=>$post, 'message'=>'success']);
         // return response(Post::where('location', '=', 'aceh')->get());
     }
