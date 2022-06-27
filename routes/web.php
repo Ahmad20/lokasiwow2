@@ -51,7 +51,7 @@ Route::group(['middleware' => ['admin']], function () {
 
 });
 Route::get('/', [PostController::class, 'index']);
-Route::get('/blogs', [PostController::class, 'getBlog']);
+// Route::get('/blogs', [PostController::class, 'getBlog']);
 Route::get('/jakarta', [PostController::class, 'getWisataJakarta']);
 Route::get('/ntb', [PostController::class, 'getWisataNtb']);
 Route::get('/jatim', [PostController::class, 'getWisataJatim']);
