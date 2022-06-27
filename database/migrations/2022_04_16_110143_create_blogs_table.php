@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -19,6 +20,10 @@ return new class extends Migration
             $table->text('content');
             $table->timestamps();
         });
+        Blog::create([
+            'title' => 'COTS Bersama NAP',
+            'content' => 'Hai saya datang dari API',
+        ]);
     }
 
     /**
